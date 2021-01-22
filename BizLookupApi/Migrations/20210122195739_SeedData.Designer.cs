@@ -2,14 +2,16 @@
 using BizLookupApi.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BizLookupApi.Migrations
 {
     [DbContext(typeof(BizLookupApiContext))]
-    partial class BizLookupApiContextModelSnapshot : ModelSnapshot
+    [Migration("20210122195739_SeedData")]
+    partial class SeedData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -22,19 +24,18 @@ namespace BizLookupApi.Migrations
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Address")
-                        .IsRequired()
-                        .HasMaxLength(50);
+                        .IsRequired();
 
                     b.Property<string>("Hours")
                         .IsRequired();
 
                     b.Property<string>("Industry")
                         .IsRequired()
-                        .HasMaxLength(50);
+                        .HasMaxLength(40);
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(50);
+                        .HasMaxLength(30);
 
                     b.HasKey("BusinessId");
 
