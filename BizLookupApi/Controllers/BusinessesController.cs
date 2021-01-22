@@ -71,8 +71,8 @@ namespace BizLookupApi.Controllers
     [HttpDelete("{id}")]
     public void Delete(int id)
     {
-      var BusinessToDelete = _db.Businesses.FirstOrDefault(entry => entry.BusinessId == id);
-      _db.Businesses.Remove(BusinessToDelete);
+      var businessToDelete = _db.Businesses.FirstOrDefault(entry => entry.BusinessId == id);
+      _db.Businesses.Remove(businessToDelete);
       _db.SaveChanges();
     }
         
