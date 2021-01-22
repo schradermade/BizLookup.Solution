@@ -40,5 +40,11 @@ namespace BizLookupMvc.Models
         return Business;
       }
 
+      public static void Post(Business business)
+      {
+        string jsonBusiness = JsonConvert.SerializeObject(business);
+        var apiCallTask = ApiHelper.Post(jsonBusiness);
+      }
+
     }
 }
