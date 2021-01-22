@@ -62,10 +62,10 @@ namespace BizLookupApi.Controllers
     }
 
     [HttpPut("{id}")]
-    public void Put(int id, [FromBody] Business Business)
+    public void Put(int id, [FromBody] Business business)
     {
-        Business.BusinessId = id;
-        _db.Entry(Business).State = EntityState.Modified;
+        business.BusinessId = id;
+        _db.Entry(business).State = EntityState.Modified;
         _db.SaveChanges();
     }
     [HttpDelete("{id}")]
