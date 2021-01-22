@@ -1,0 +1,14 @@
+/Users/nathanschrader/Desktop/Epicodus/BizLookup.Solution/BizLookupApi/obj/Debug/netcoreapp2.2/BizLookupApi.csprojAssemblyReference.cache
+/Users/nathanschrader/Desktop/Epicodus/BizLookup.Solution/BizLookupApi/obj/Debug/netcoreapp2.2/BizLookupApi.csproj.CoreCompileInputs.cache
+/Users/nathanschrader/Desktop/Epicodus/BizLookup.Solution/BizLookupApi/obj/Debug/netcoreapp2.2/BizLookupApi.RazorAssemblyInfo.cache
+/Users/nathanschrader/Desktop/Epicodus/BizLookup.Solution/BizLookupApi/obj/Debug/netcoreapp2.2/BizLookupApi.RazorAssemblyInfo.cs
+/Users/nathanschrader/Desktop/Epicodus/BizLookup.Solution/BizLookupApi/obj/Debug/netcoreapp2.2/BizLookupApi.AssemblyInfoInputs.cache
+/Users/nathanschrader/Desktop/Epicodus/BizLookup.Solution/BizLookupApi/obj/Debug/netcoreapp2.2/BizLookupApi.AssemblyInfo.cs
+/Users/nathanschrader/Desktop/Epicodus/BizLookup.Solution/BizLookupApi/bin/Debug/netcoreapp2.2/BizLookupApi.deps.json
+/Users/nathanschrader/Desktop/Epicodus/BizLookup.Solution/BizLookupApi/bin/Debug/netcoreapp2.2/BizLookupApi.runtimeconfig.json
+/Users/nathanschrader/Desktop/Epicodus/BizLookup.Solution/BizLookupApi/bin/Debug/netcoreapp2.2/BizLookupApi.runtimeconfig.dev.json
+/Users/nathanschrader/Desktop/Epicodus/BizLookup.Solution/BizLookupApi/bin/Debug/netcoreapp2.2/BizLookupApi.dll
+/Users/nathanschrader/Desktop/Epicodus/BizLookup.Solution/BizLookupApi/bin/Debug/netcoreapp2.2/BizLookupApi.pdb
+/Users/nathanschrader/Desktop/Epicodus/BizLookup.Solution/BizLookupApi/obj/Debug/netcoreapp2.2/BizLookupApi.RazorTargetAssemblyInfo.cache
+/Users/nathanschrader/Desktop/Epicodus/BizLookup.Solution/BizLookupApi/obj/Debug/netcoreapp2.2/BizLookupApi.dll
+/Users/nathanschrader/Desktop/Epicodus/BizLookup.Solution/BizLookupApi/obj/Debug/netcoreapp2.2/BizLookupApi.pdb
