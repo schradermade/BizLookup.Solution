@@ -46,5 +46,11 @@ namespace BizLookupMvc.Models
         var apiCallTask = ApiHelper.Post(jsonBusiness);
       }
 
+      public static void Put(Business business)
+      {
+        string jsonBusiness = JsonConvert.SerializeObject(business);
+        var apiCallTask = ApiHelper.Put(business.BusinessId, jsonBusiness);
+      }
+
     }
 }
