@@ -19,6 +19,9 @@ namespace BizLookupApi
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
+                .UseStartup<Startup>()
+                .UseUrls("http://localhost:5003/",
+                        "https://localhost:5004/"
+                );
     }
 }
