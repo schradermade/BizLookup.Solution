@@ -1,0 +1,16 @@
+<h1>All Businesses:</h1>
+
+<ol>
+@foreach (Business business in Model)
+{
+    <ul>
+        <li>ID: @business.businessId</li>
+        <li>Name: @business.Name</li>
+        <li>Species: @business.Industry</li>
+        <li>Age: @business.Address</li>
+        <li>Gender: @business.Hours</li>
+    </ul>
+    <a href="/Businesses/Details/@(business.BusinessId)"><p>View Details</p></a>
+    <br>
+}
+</ol>
