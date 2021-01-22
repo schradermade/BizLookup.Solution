@@ -52,5 +52,10 @@ namespace BizLookupMvc.Models
         var apiCallTask = ApiHelper.Put(business.BusinessId, jsonBusiness);
       }
 
+      public static void Delete(int id)
+      {
+        var apiCallTask = ApiHelper.Delete(id);
+      }
+
     }
 }
