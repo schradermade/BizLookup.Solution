@@ -12,5 +12,14 @@ namespace BizLookupMvc.Models
       var response = await client.ExecuteTaskAsync(request);
       return response.Content;
     }
+
+    public static async Task Post(string newBusiness)
+    {
+      RestClient client = new RestClient("http://locahost:5000/api");
+      RestRequest request = new RestRequest($"businesses", Method.POST);
+      request.AddHeader("Content-Type", "application/json");
+      request.AddJsonBody(newBusiness);
+      var response = await client.ExecuteTaskAsync(request);
+    }
   }
 }
