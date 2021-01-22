@@ -29,15 +29,15 @@ namespace BizLookupMvc.Models
         return businessList;
       }
 
-      public static Animal GetDetails(int id)
+      public static Business GetDetails(int id)
       {
         var apiCallTask = ApiHelper.Get(id);
         var result = apiCallTask.Result;
 
         JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
-        Animal animal = JsonConvert.DeserializeObject<Animal>(jsonResponse.ToString());
+        Business Business = JsonConvert.DeserializeObject<Business>(jsonResponse.ToString());
 
-        return animal;
+        return Business;
       }
 
     }
