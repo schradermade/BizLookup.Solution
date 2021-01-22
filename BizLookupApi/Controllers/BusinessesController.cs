@@ -1,56 +1,80 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-using Biz.Models;
+using Microsoft.EntityFrameworkCore;
+using BizLookupApi.Models;
 
-
-namespace CretaceousPark.Controllers
+namespace BizLookupApi.Controllers
 {
   [Route("api/[controller]")]
   [ApiController]
-  public class AnimalsController : ControllerBase
+  public class BusinessesController : ControllerBase
   {
-    private CretaceousParkContext _db;
+    private BizLookupApiContext _db;
 
-    public AnimalsController(CretaceousParkContext db)
+    public BusinessesController(BizLookupApiContext db)
     {
       _db = db;
     }
 
-    // GET api/animals
+    // this route is used to search for objects (Businesses) by properties (strings)
+    //GET api/Businesses
     [HttpGet]
-    public ActionResult<IEnumerable<Animal>> Get()
+    public ActionResult<IEnumerable<Business>> Get(string name, string industry, string address, string hours)
     {
-      return _db.Animals.ToList();
+        var query = _db.Businesses.AsQueryable();
+
+        if (name != null)
+        {
+        query = query.Where(entry => entry.Name == name);
+        }
+
+        if (industry != null)
+        {
+        query = query.Where(entry => entry.Industry == industry);
+        }
+
+        if (address != null)
+        {
+        query = query.Where(entry => entry.Address == address);
+        }
+
+        if (hours != null)
+        {
+        query = query.Where(entry => entry.Hours == hours);
+        }
+
+        return query.ToList();
     }
 
-    // POST api/animals
+    // POST api/Businesses
     [HttpPost]
-    public void Post([FromBody] Animal animal)
+    public void Post([FromBody] Business Business)
     {
-      _db.Animals.Add(animal);
+      _db.Businesses.Add(Business);
       _db.SaveChanges();
     }
-    // GET api/animals/5
+    //GET api/Businesses/5
     [HttpGet("{id}")]
-    public ActionResult<Animal> Get(int id)
+    public ActionResult<Business> Get(int id)
     {
-        return _db.Animals.FirstOrDefault(entry => entry.AnimalId == id);
+        return _db.Businesses.FirstOrDefault(entry => entry.BusinessId == id);
     }
-    // PUT api/animals/5
+
     [HttpPut("{id}")]
-    public void Put(int id, [FromBody] Animal animal)
+    public void Put(int id, [FromBody] Business Business)
     {
-        animal.AnimalId = id;
-        _db.Entry(animal).State = EntityState.Modified;
+        Business.BusinessId = id;
+        _db.Entry(Business).State = EntityState.Modified;
         _db.SaveChanges();
     }
     [HttpDelete("{id}")]
     public void Delete(int id)
     {
-      var animalToDelete = _db.Animals.FirstOrDefault(entry => entry.AnimalId == id);
-      _db.Animals.Remove(animalToDelete);
+      var BusinessToDelete = _db.Businesses.FirstOrDefault(entry => entry.BusinessId == id);
+      _db.Businesses.Remove(BusinessToDelete);
       _db.SaveChanges();
     }
+        
   }
 }
