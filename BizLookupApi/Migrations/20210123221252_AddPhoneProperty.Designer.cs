@@ -2,14 +2,16 @@
 using BizLookupApi.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BizLookupApi.Migrations
 {
     [DbContext(typeof(BizLookupApiContext))]
-    partial class BizLookupApiContextModelSnapshot : ModelSnapshot
+    [Migration("20210123221252_AddPhoneProperty")]
+    partial class AddPhoneProperty
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

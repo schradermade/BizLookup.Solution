@@ -21,7 +21,7 @@ namespace BizLookupApi.Controllers
     // this route is used to search for objects (Businesses) by properties (strings)
     //GET api/Businesses
     [HttpGet]
-    public ActionResult<IEnumerable<Business>> Get(string name, string industry, string address, string hours, string url)
+    public ActionResult<IEnumerable<Business>> Get(string name, string industry, string address, string hours, string url, string phone)
     {
         var query = _db.Businesses.AsQueryable();
 
@@ -48,7 +48,12 @@ namespace BizLookupApi.Controllers
         if (url != null)
         {
         query = query.Where(entry => entry.URL == url);
-        }        
+        }
+
+        if (phone != null)
+        {
+        query = query.Where(entry => entry.Phone == phone);
+        }     
 
         return query.ToList();
     }

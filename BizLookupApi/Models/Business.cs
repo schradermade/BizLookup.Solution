@@ -19,6 +19,7 @@ namespace BizLookupApi.Models
         [Required]
         public string Hours { get; set; }
         public string URL { get; set; }
+        public string Phone { get; set; }
 
     }
 }
