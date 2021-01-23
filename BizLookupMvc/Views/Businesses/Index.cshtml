@@ -1,19 +1,8 @@
-<h1>All Businesses:</h1>
-
-@* <ol>
-@foreach (Business business in Model)
-{
-    <ul>
-        <li>ID: @business.BusinessId</li>
-        <li>Name: @business.Name</li>
-        <li>Industry: @business.Industry</li>
-        <li>Address: @business.Address</li>
-        <li>Hours: @business.Hours</li>
-    </ul>
-    <a href="/Businesses/Details/@(business.BusinessId)"><p>View Details</p></a>
-    <br>
+@{
+    ViewData["Title"] = "Home Page";
 }
-</ol> *@
+
+<h1>All Businesses:</h1>
 
 <table class="table">
         <thead>
@@ -40,3 +29,33 @@
             }
         </tbody>
     </table>
+
+<h1>New Business:</h1>
+
+<form action="/businesses" method="post">
+  <label for="name">Business Name</label>
+  <input id="name" name="name" type="text">
+  <label for="industry">Business Industry</label>
+  <input id="industry" name="industry" type="text">
+  <label for="hours">Business Hours</label>
+  <input id="hours" name="hours" type="text">
+  <label for="address">Business Address</label>
+  <input id="address" name="address" type="text">
+  <button type="submit">Go!</button>
+</form>
+
+
+@* <ol>
+@foreach (Business business in Model)
+{
+    <ul>
+        <li>ID: @business.BusinessId</li>
+        <li>Name: @business.Name</li>
+        <li>Industry: @business.Industry</li>
+        <li>Address: @business.Address</li>
+        <li>Hours: @business.Hours</li>
+    </ul>
+    <a href="/Businesses/Details/@(business.BusinessId)"><p>View Details</p></a>
+    <br>
+}
+</ol> *@
