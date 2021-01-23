@@ -39,9 +39,9 @@ namespace BizLookupMvc.Models
         var result = apiCallTask.Result;
 
         JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
-        Business Business = JsonConvert.DeserializeObject<Business>(jsonResponse.ToString());
+        Business business = JsonConvert.DeserializeObject<Business>(jsonResponse.ToString());
 
-        return Business;
+        return business;
       }
 
       public static void Post(Business business)
