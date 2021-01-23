@@ -2,7 +2,34 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Business Info:</h1>
+<table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Industry</th>
+                <th>Hours</th>
+                <th>Address</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td>@Model.BusinessId</td>
+                    <td>@Model.Name</td>
+                    <td>@Model.Industry</td>
+                    <td>@Model.Hours</td>
+                    <td>@Model.Address</td>
+                </tr>
+        </tbody>
+    </table>
+
+<a class="btn btn-warning" href="/Businesses/Edit/@(Model.BusinessId)"><p>Edit @Model.Name</p></a>
+<a class="btn btn-success" href="/Businesses"><p>Return To Businesses</p></a>
+
+
+
+@* <h1>Business Info:</h1>
 <ul>
     <li>ID: @Model.BusinessId</li>
     <li>Name: @Model.Name</li>
@@ -17,4 +44,5 @@
 
 <a href="/Businesses"><p>Return</p></a>
 
-<a href="/Businesses/Delete/@(Model.BusinessId)"><p>Remove Business</p></a>
+<a href="/Businesses/Delete/@(Model.BusinessId)"><p>Remove Business</p></a> *@
+@* <button class="btn btn-success" type="submit">Submit Edits</button> *@
