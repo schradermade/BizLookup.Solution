@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
@@ -20,7 +21,7 @@ namespace BizLookupApi.Controllers
     // this route is used to search for objects (Businesses) by properties (strings)
     //GET api/Businesses
     [HttpGet]
-    public ActionResult<IEnumerable<Business>> Get(string name, string industry, string address, string hours)
+    public ActionResult<IEnumerable<Business>> Get(string name, string industry, string address, string hours, string url)
     {
         var query = _db.Businesses.AsQueryable();
 
@@ -43,6 +44,11 @@ namespace BizLookupApi.Controllers
         {
         query = query.Where(entry => entry.Hours == hours);
         }
+        
+        if (url != null)
+        {
+        query = query.Where(entry => entry.URL == url);
+        }        
 
         return query.ToList();
     }

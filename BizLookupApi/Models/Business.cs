@@ -1,3 +1,4 @@
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace BizLookupApi.Models
@@ -17,5 +18,7 @@ namespace BizLookupApi.Models
         public string Address { get; set; }
         [Required]
         public string Hours { get; set; }
+        public string URL { get; set; }
+
     }
 }
