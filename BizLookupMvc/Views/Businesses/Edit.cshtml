@@ -1,0 +1,14 @@
+<h1>Edit Business Information:</h1>
+<form action="/Businesses/Details/@(Model.BusinessId)" method="post">
+  <label for="name">Business's Name</label>
+  <input id="name" name="name" type="text" value="@(Model.Name)">
+  <label for="hours">Business's Hours</label>
+  <input id="hours" name="hours" type="text" value="@(Model.Hours)">
+  <label for="industry">Business's Industry</label>
+  <input id="industry" name="industry" type="text" value="@(Model.Industry)">
+  <label for="address">Business's Address</label>
+  <input id="address" name="address" type="text" value="@(Model.Address)">
+  <button type="submit">Go!</button>
+</form>
+
+<a href="/Businesses/Details/@(Model.BusinessId)"><p>Return to Details</p></a>
