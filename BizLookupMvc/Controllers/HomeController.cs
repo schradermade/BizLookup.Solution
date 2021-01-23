@@ -12,7 +12,7 @@ namespace BizLookupMvc.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("Index", "Businesses");
         }
 
         public IActionResult Privacy()
