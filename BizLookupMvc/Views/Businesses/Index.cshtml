@@ -12,6 +12,7 @@
                 <th>Industry</th>
                 <th>Hours</th>
                 <th>Address</th>
+                <th>Website</th>
                 <th></th>
             </tr>
         </thead>
@@ -24,6 +25,7 @@
                     <td>@business.Industry</td>
                     <td>@business.Hours</td>
                     <td>@business.Address</td>
+                    <td><a href="https://www.alaskaair.com/"><p>@business.URL</p></a></td>
                     <td><a class="btn btn-success" href="/Businesses/Details/@(business.BusinessId)"><p>View Details</p></a></td>
                 </tr>
             }

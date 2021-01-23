@@ -21,6 +21,7 @@ namespace BizLookupMvc.Models
       public string Address { get; set; }
       [Required]
       public string Hours { get; set; }
+      public string URL { get; set; }
 
       public static List<Business> GetBusinesses()
       {
