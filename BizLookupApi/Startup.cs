@@ -28,7 +28,7 @@ namespace BizLookupApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<BizLookupApiContext>(opt =>
-            opt.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
+                opt.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 

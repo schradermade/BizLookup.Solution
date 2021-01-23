@@ -49,9 +49,9 @@ namespace BizLookupApi.Controllers
 
     // POST api/Businesses
     [HttpPost]
-    public void Post([FromBody] Business Business)
+    public void Post([FromBody] Business business)
     {
-      _db.Businesses.Add(Business);
+      _db.Businesses.Add(business);
       _db.SaveChanges();
     }
     //GET api/Businesses/5
