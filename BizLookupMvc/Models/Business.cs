@@ -1,4 +1,8 @@
 using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
+using System;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace BizLookupMvc.Models
 {

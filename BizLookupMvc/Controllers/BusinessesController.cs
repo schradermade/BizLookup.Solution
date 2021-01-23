@@ -1,86 +1,51 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using BizLookupApi.Models;
+using BizLookupMvc.Models;
 
-namespace BizLookupApi.Controllers
+namespace BizLookupMvc.Controllers
 {
-  [Route("api/[controller]")]
-  [ApiController]
-  public class BusinessesController : ControllerBase
+  public class BusinessesController : Controller
   {
-    private BizLookupApiContext _db;
-
-    public BusinessesController(BizLookupApiContext db)
-    {
-      _db = db;
-    }
-
     public IActionResult Index()
     {
       var allBusinesses = Business.GetBusinesses();
       return View(allBusinesses);
     }
 
-    // this route is used to search for objects (Businesses) by properties (strings)
-    //GET api/Businesses
-    [HttpGet]
-    public ActionResult<IEnumerable<Business>> Get(string name, string industry, string address, string hours)
-    {
-        var query = _db.Businesses.AsQueryable();
-
-        if (name != null)
-        {
-        query = query.Where(entry => entry.Name == name);
-        }
-
-        if (industry != null)
-        {
-        query = query.Where(entry => entry.Industry == industry);
-        }
-
-        if (address != null)
-        {
-        query = query.Where(entry => entry.Address == address);
-        }
-
-        if (hours != null)
-        {
-        query = query.Where(entry => entry.Hours == hours);
-        }
-
-        return query.ToList();
-    }
-
-    // POST api/Businesses
     [HttpPost]
-    public void Post([FromBody] Business Business)
+    public IActionResult Index(Business business)
     {
-      _db.Businesses.Add(Business);
-      _db.SaveChanges();
-    }
-    //GET api/Businesses/5
-    [HttpGet("{id}")]
-    public ActionResult<Business> Get(int id)
-    {
-        return _db.Businesses.FirstOrDefault(entry => entry.BusinessId == id);
+      Business.Post(business);
+      return RedirectToAction("Index");
     }
 
-    [HttpPut("{id}")]
-    public void Put(int id, [FromBody] Business business)
+    public IActionResult Details(int id)
     {
-        business.BusinessId = id;
-        _db.Entry(business).State = EntityState.Modified;
-        _db.SaveChanges();
+      var business = Business.GetDetails(id);
+      return View(business);
     }
-    [HttpDelete("{id}")]
-    public void Delete(int id)
+
+    public IActionResult Edit(int id)
     {
-      var businessToDelete = _db.Businesses.FirstOrDefault(entry => entry.BusinessId == id);
-      _db.Businesses.Remove(businessToDelete);
-      _db.SaveChanges();
+      var business = Business.GetDetails(id);
+      return View(business);
     }
-        
+
+    [HttpPost]
+    public IActionResult Details(int id, Business business)
+    {
+      business.BusinessId = id;
+      Business.Put(business);
+      return RedirectToAction("Details", id);
+    }
+
+    public IActionResult Delete(int id)
+    {
+      Business.Delete(id);
+      return RedirectToAction("Index");
+    }
   }
 }
