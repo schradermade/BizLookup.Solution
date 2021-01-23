@@ -1,4 +1,4 @@
-<h1>Edit Business Information:</h1>
+@* <h1>Edit Business Information:</h1>
 <form action="/Businesses/Details/@(Model.BusinessId)" method="post">
   <label for="name">Business's Name</label>
   <input id="name" name="name" type="text" value="@(Model.Name)">
@@ -9,6 +9,31 @@
   <label for="address">Business's Address</label>
   <input id="address" name="address" type="text" value="@(Model.Address)">
   <button type="submit">Go!</button>
-</form>
+</form> *@
 
-<a href="/Businesses/Details/@(Model.BusinessId)"><p>Return to Details</p></a>
+@* <a href="/Businesses/Details/@(Model.BusinessId)"><p>Return to Details</p></a> *@
+
+<form action="/Businesses/Details/@(Model.BusinessId)" method="post">
+    <table class="table" >
+        <thead>
+            <tr>
+                <th><label for="id">Id</label></th>
+                <th><label for="name">Name</label></th>
+                <th><label for="industry">Industry</label></th>
+                <th><label for="hours">Hours</label></th>
+                <th><label for="address">Address</label></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td>@Model.BusinessId</td>
+                    <td><input id="name" name="name" type="text" value="@(Model.Name)"></td>
+                    <td><input id="industry" name="industry" type="text" value="@(Model.Industry)"></td>
+                    <td><input id="hours" name="hours" type="text" value="@(Model.Hours)"></td>
+                    <td><input id="address" name="address" type="text" value="@(Model.Address)"></td>
+                </tr>
+        </tbody>
+    </table>
+  <button class="btn btn-success" type="submit">Submit Edits</button>
+</form>
