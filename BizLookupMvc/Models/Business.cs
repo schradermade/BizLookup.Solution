@@ -22,6 +22,8 @@ namespace BizLookupMvc.Models
       [Required]
       public string Hours { get; set; }
       public string URL { get; set; }
+      [Required]
+      [Range(10, 10, ErrorMessage = "Phone number must be exactly 10 digits.")]
       public string Phone { get; set; }
 
       public static List<Business> GetBusinesses()
