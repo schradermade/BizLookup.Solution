@@ -20,7 +20,7 @@ namespace BizLookupMvc
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
-                .UseUrls("http://localhost:5000/",
+                .UseUrls("https://localhost:5000/",
                         "https://localhost:5001/"
                 );
     }
