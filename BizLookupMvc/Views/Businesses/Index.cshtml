@@ -1,16 +1,40 @@
 <h1>All Businesses:</h1>
 
-<ol>
+@* <ol>
 @foreach (Business business in Model)
 {
     <ul>
         <li>ID: @business.BusinessId</li>
         <li>Name: @business.Name</li>
-        <li>Species: @business.Industry</li>
-        <li>Age: @business.Address</li>
-        <li>Gender: @business.Hours</li>
+        <li>Industry: @business.Industry</li>
+        <li>Address: @business.Address</li>
+        <li>Hours: @business.Hours</li>
     </ul>
     <a href="/Businesses/Details/@(business.BusinessId)"><p>View Details</p></a>
     <br>
 }
-</ol>
+</ol> *@
+
+<table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Industry</th>
+                <th>Hours</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Business business in Model)
+            {
+                <tr>
+                    <td>@business.BusinessId</td>
+                    <td>@business.Name</td>
+                    <td>@business.Industry</td>
+                    <td>@business.Hours</td>
+                    <td>@business.Address</td>
+                </tr>
+            }
+        </tbody>
+    </table>
