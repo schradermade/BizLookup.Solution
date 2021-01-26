@@ -12156,11 +12156,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/nathanschrader/Desktop/Epicodus/BizLookup.Solution/BizLookupApi/BizLookupApi.csproj",
+      "projectUniqueName": "/Users/nathanschrader/Desktop/testproj/BizLookup.Solution/BizLookupApi/BizLookupApi.csproj",
       "projectName": "BizLookupApi",
-      "projectPath": "/Users/nathanschrader/Desktop/Epicodus/BizLookup.Solution/BizLookupApi/BizLookupApi.csproj",
+      "projectPath": "/Users/nathanschrader/Desktop/testproj/BizLookup.Solution/BizLookupApi/BizLookupApi.csproj",
       "packagesPath": "/Users/nathanschrader/.nuget/packages/",
-      "outputPath": "/Users/nathanschrader/Desktop/Epicodus/BizLookup.Solution/BizLookupApi/obj/",
+      "outputPath": "/Users/nathanschrader/Desktop/testproj/BizLookup.Solution/BizLookupApi/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
@@ -12176,7 +12176,6 @@
       },
       "frameworks": {
         "netcoreapp2.2": {
-          "targetAlias": "netcoreapp2.2",
           "projectReferences": {}
         }
       },
@@ -12188,7 +12187,6 @@
     },
     "frameworks": {
       "netcoreapp2.2": {
-        "targetAlias": "netcoreapp2.2",
         "dependencies": {
           "Microsoft.AspNetCore.App": {
             "suppressParent": "All",
@@ -12217,16 +12215,10 @@
           }
         },
         "imports": [
-          "net461",
-          "net462",
-          "net47",
-          "net471",
-          "net472",
-          "net48"
+          "net461"
         ],
         "assetTargetFallback": true,
-        "warn": true,
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.102/RuntimeIdentifierGraph.json"
+        "warn": true
       }
     }
   }
