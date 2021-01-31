@@ -3,26 +3,27 @@ using System.Collections.Generic;
 using System;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Threading.Tasks;
 
 namespace BizLookupMvc.Models
 {
     public class Business
     {
       public int BusinessId { get; set; }
-      [Required]
+      
       [StringLength(50)]
       public string Name { get; set; }
-      [Required]
+    
       [StringLength (50)]
       public string Industry { get; set; }
-      [Required]
+      
       [StringLength (50)]
         // [Range(0, 200, ErrorMessage = "Industry must be between 0 and 200.")]
       public string Address { get; set; }
-      [Required]
+      
       public string Hours { get; set; }
       public string URL { get; set; }
-      [Required]
+      
       [Range(10, 10, ErrorMessage = "Phone number must be exactly 10 digits.")]
       public string Phone { get; set; }
 
@@ -37,10 +38,9 @@ namespace BizLookupMvc.Models
         return businessList;
       }
 
-      public static Business GetDetails(int id)
+      public static async Task<Business> GetDetails(int id)
       {
-        var apiCallTask = ApiHelper.Get(id);
-        var result = apiCallTask.Result;
+        string result = await ApiHelper.Get(id);
 
         JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
         Business business = JsonConvert.DeserializeObject<Business>(jsonResponse.ToString());
@@ -48,10 +48,10 @@ namespace BizLookupMvc.Models
         return business;
       }
 
-      public static void Post(Business business)
+      public static async Task PostBiz(Business business)
       {
         string jsonBusiness = JsonConvert.SerializeObject(business);
-        var apiCallTask = ApiHelper.Post(jsonBusiness);
+        await ApiHelper.Post(jsonBusiness);
       }
 
       public static void Put(Business business)

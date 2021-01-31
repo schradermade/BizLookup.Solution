@@ -4,6 +4,7 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BizLookupMvc.Models;
+using System.Threading.Tasks;
 
 namespace BizLookupMvc.Controllers
 {
@@ -15,22 +16,15 @@ namespace BizLookupMvc.Controllers
       return View(allBusinesses);
     }
 
-    [HttpPost]
-    public IActionResult Index(Business business)
+    public async Task<IActionResult> Details(int id)
     {
-      Business.Post(business);
-      return RedirectToAction("Index");
-    }
-
-    public IActionResult Details(int id)
-    {
-      var business = Business.GetDetails(id);
+      Business business = await Business.GetDetails(id);
       return View(business);
     }
 
-    public IActionResult Edit(int id)
+    public async Task<IActionResult> Edit(int id)
     {
-      var business = Business.GetDetails(id);
+      var business = await Business.GetDetails(id);
       return View(business);
     }
 
@@ -45,6 +39,19 @@ namespace BizLookupMvc.Controllers
     public IActionResult Delete(int id)
     {
       Business.Delete(id);
+      return RedirectToAction("Index");
+    }
+
+    public ActionResult Create()
+    {
+      return View();
+    }
+
+    [HttpPost]
+    [HttpPost]
+    public async Task<IActionResult> Index(Business business)
+    {
+      await Business.PostBiz(business);
       return RedirectToAction("Index");
     }
   }

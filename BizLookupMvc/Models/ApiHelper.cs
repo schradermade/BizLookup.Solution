@@ -24,7 +24,7 @@ namespace BizLookupMvc.Models
 
     public static async Task Post(string newBusiness)
     {
-      RestClient client = new RestClient("http://locahost:5003/api");
+      RestClient client = new RestClient("http://localhost:5003/api");
       RestRequest request = new RestRequest($"businesses", Method.POST);
       request.AddHeader("Content-Type", "application/json");
       request.AddJsonBody(newBusiness);
