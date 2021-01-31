@@ -20,7 +20,7 @@ namespace BizLookupMvc.Models
       [StringLength (50)]
         // [Range(0, 200, ErrorMessage = "Industry must be between 0 and 200.")]
       public string Address { get; set; }
-      
+      [Required]
       public string Hours { get; set; }
       public string URL { get; set; }
       
