@@ -12156,11 +12156,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/nathanschrader/Desktop/testproj/BizLookup.Solution/BizLookupApi/BizLookupApi.csproj",
+      "projectUniqueName": "/Users/nathanschrader/Desktop/Epicodus/BizLookup.Solution/BizLookupApi/BizLookupApi.csproj",
       "projectName": "BizLookupApi",
-      "projectPath": "/Users/nathanschrader/Desktop/testproj/BizLookup.Solution/BizLookupApi/BizLookupApi.csproj",
+      "projectPath": "/Users/nathanschrader/Desktop/Epicodus/BizLookup.Solution/BizLookupApi/BizLookupApi.csproj",
       "packagesPath": "/Users/nathanschrader/.nuget/packages/",
-      "outputPath": "/Users/nathanschrader/Desktop/testproj/BizLookup.Solution/BizLookupApi/obj/",
+      "outputPath": "/Users/nathanschrader/Desktop/Epicodus/BizLookup.Solution/BizLookupApi/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
