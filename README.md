@@ -1,128 +1,116 @@
-# _Tualatin Business Directory_
-
-### _January 22, 2021_
-
-### By Nathan Schrader
-
-## **Project Description**
-This is a website that allows you to create a business listing directory, and add/edit/delete business listings.
-
-## **Required for Use**
-* C# and .Net Core installed on your local machine. (Developed on .Net Core v2.2.4)
-* Console/Terminal access.
-* Code Editor like [Visual Studio Code](https://code.visualstudio.com/)
-* MySQL Community Server
-* MySQL Workbench
-* Postman (optional but recommended)
-
-## **Installation Instructions**
-Download [.Net Core](https://dotnet.microsoft.com/download) and follow the installation instructions for your computer's
-operating system.
-
-### **Installing C#, .NET**
-Install C# and .Net according to your operating system below:
-
-**For Mac**
-1. Download this .NET Core SDK Software Development Kit. 
-2. Open the .pkg file. This will launch an installer which will walk you through installation steps. Use the default settings the installer suggests.
-3. Confirm the installation is successful by opening your terminal and running the command <code>dotnet --version</code>, which should return the correct version number.
-
-**For Windows**
-1. Download either the the 64-bit .NET Core SDK Software Development Kit
-2. Open the file and follow the steps provided by the installer for your OS.
-3. Confirm the installation is successful by opening a new Windows PowerShell window and running the command <code>dotnet --version</code> You should see a response with the correct version number.
-
-**My SQL Installation Below** 
-
-**Windows 10 -**
-
-Start by downloading the MySQL Web Installer from the [MySQL Downloads](https://dev.mysql.com/downloads/file/?id=484919) page. (Use the No thanks, just start my download link.)
-
-Follow along with the installer:
-
-1) Click "Yes" if prompted to update.
-2) Accept license terms.
-3) Choose Custom setup type.
-4) When prompted to Select Products and Features, choose the following:
-* MySQL Server 8.0.19 (This will be under "MySQL Servers > MySQL Server > MySQL Server 8.0")
-
-* MySQL Workbench 8.0.19 (This will be under "Applications > MySQL Workbench > MySQL Workbench 8.0")
-
-5) Select "Next", then "Execute". Wait for download and installation. (This can take a few minutes.)
-
-6) Advance through Configuration as follows:
-
-* High Availability set to "Standalone".
-
-* "Defaults are OK" under Type and Networking.
-
-* Authentication Method set to Use Legacy Authentication Method.
-
-* Set password to something you will remember. 
-
-* Defaults are OK under Windows Service. Make sure that checkboxes are checked for the options "Configure MySQL Server as a Windows Service" and "Start the MySQL Server at System Startup". Under Run Windows Service as..., the "Standard System Account" should be selected.
-
-7) Complete Installation process.
-Next, add the MySQL environment variable to the System PATH. We must include MySQL in the System Environment Path Variable. This is its own multi-step process:
-
-8) Open the Control Panel and visit System and "Security > System". Select "Change Settings" and a pop-up window will display. Select the tab "Advanced" and select the "Environment Variables" button.
-9) Within the System Variables navigator window, select PATH..., click Edit..., and then New.
-
-10) Add the exact location of your MySQL installation, and click OK. (This location is likely C:\Program Files\MySQL\MySQL Server 8.0\bin, but may differ depending on your specific installation.)
-
-**MacOS -**
-
-Start by downloading the MySQL Community Server .dmg file from the [MySQL Community Server page](https://dev.mysql.com/downloads/file/?id=484914). Click the download icon. Use the No thanks, just start my download link.
-
-Next, follow along with the Installer until you reach the Configuration page. Once you've reached Configuration, select or set the following options (use default if not specified):
-
-1) Use Legacy Password Encryption.
-
-2) Set password to something you will remember.
-
-3) Click Finish.
-
-4) Open the terminal and enter the command echo 'export PATH="/usr/local/mysql/bin:$PATH"' >> ~/.bash_profile. This will save this path in .bash_profile, which is where our terminal is configured.
-
-5) Type in source ~/.bash_profile (or restart the terminal) in order to actually verify that MySQL was installed.
-
-Next, verify MySQL installation by opening terminal and entering the command mysql -uroot -pepicodus. You'll know it's working and connected if you gain access and see the MySQL command line. If it's not working, you'll likely get a -bash: mysql: command not found error.
-
-You can exit the mysql program by entering exit.
-
-Next, download the MySQL Workbench .dmg file from the MySQL Workbench page. (Use the No thanks, just start my download link.)
-
-Install MySQL Workbench to Applications folder.
-
-Then open MySQL Workbench and select the Local instance 3306 server. You will need to enter the password you set. (We used epicodus.) If it connects, you're all set.
-
-### **Install/Setup Project**
-
-**Download The Project**
-
-Option 1 (download zip file)
-1) Copy and paste the following GitHub project link into your web browser's url bar and hit enter/return. 
-2) Download a .zip copy the repository by clicking on the large green "Code" button near the upper right corner of the screen.
-3) Right click the .zip file and extract(unzip) it's contents.
-4) Open your computer's terminal/console, and navigate to folder called "__BizLookup.Solution__". 
+<div align="center">
+  <h1>Tualatin Business Directory</h1>
+  <br>
+  <small>Project by:</small>
+  <h3>Nathan Schrader</h3>
+  <h4>Created Jan 23th, 2021.</h4>
+</div>
 
 
-Option 2 (via git console/terminal)
-1) Open your Git enabled terminal/console and navigate to a directory that you wish to download this project to.
-2) Type the following line of code into your terminal/console to automatically download the project to your current directory and hit return/enter
+<p align="center">
+    <!-- Project Image -->
+    <br>
+    <a>
+        <img src="BizLookupMvc/wwwroot/img/businesslisting.jpeg">
+    </a>
+    <p align="center">
+      ___________________________
+    </p>
+    <!-- Project GitHub Link -->
+    <p align="center">
+        <a href="https://github.com/schradermade/BizLookup.Solution">
+            <strong>Link to this project's GitHub Repo</strong>
+        </a> 
+    </p>
+</p>
+<br>
+
+
+
+
+# 🗄 Table of Contents
+
+  - <a href="#📖-project-description">Project Description</a>
+  - <a href="#🦠-known-bugs">Known Bugs</a>
+  - <a href="#🛠-technologies-used">Technologies Used</a>
+  - <a href="#🧩-getting-started">Getting Started</a>
+  - <a href="#📂-setup-and-use">Setup and Use</a>
+  - <a href="#🔎-api-information">API Information</a>
+  - <a href="#☎️-contact-and-support">Contact</a>
+  - <a href="#🛡-license">License</a>
+
+
+# 📖 Project Description
+
+This project was created in Week 11 of the Epicodus Coding School, using C#/.NET MVC. The objective was to build a web application to be a business directory where users can add, edit or delete a business listing.
+
+# 🦠 Known Bugs
+
+At this time, there are no known bugs. If you see spot a bug feel free to make a pull request.
+
+# 🛠 Technologies Used
+
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [C# 7.3](https://docs.microsoft.com/en-us/dotnet/csharp/)
+- [.NET Core 2.2](https://docs.microsoft.com/en-us/aspnet/core/mvc/overview?view=aspnetcore-3.1)
+- [MySQL](https://dev.mysql.com/)
+- [Git](https://git-scm.com/)
+- [Swagger](https://swagger.io/docs/)
+- [MySql Workbench](https://www.mysql.com/products/workbench/)
+- [Entity Framework Core 2.2.6](https://docs.microsoft.com/en-us/ef/core/)
+- [MSTest](https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-mstest)
+- [Object Oriented Programming](https://www.freecodecamp.org/news/object-oriented-programming-concepts-21bb035f7260/)
+- [Identity](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/identity?view=aspnetcore-5.0&tabs=visual-studio)
+
+# 🧩 Getting Started
+
+### Install .NET Core
+
+- On macOS Mojave or later
+  - [Click here](https://dotnet.microsoft.com/download/thank-you/dotnet-sdk-2.2.106-macos-x64-installer) to download the .NET Core SDK from Microsoft Corp for macOS.
+- On Windows 10 x64 or later
+  - [Click here](https://dotnet.microsoft.com/download/thank-you/dotnet-sdk-2.2.203-windows-x64-installer) to download the 64-bit .NET Core SDK from Microsoft Corp for Windows.
+
+### Install dotnet script
+
+Enter the command `dotnet tool install -g dotnet-script` in Terminal for macOS or PowerShell for Windows.
+
+### Install MySQL Workbench
+
+[Download and install the appropriate version of MySQL Workbench](https://dev.mysql.com/downloads/workbench/).
+
+### Code Editor
+
+To view or edit the code, you will need an code editor or text editor. The popular open-source choices for an code editor are Atom and VisualStudio Code.
+
+1. Code Editor Download:
+   - Option 1: [Atom](https://nodejs.org/en/)
+   - Option 2: [VisualStudio Code](https://www.npmjs.com/)
+2. Click the download most applicable to your OS and system.
+3. Wait for download to complete, then install -- Windows will run the setup exe and macOS will drag and drop into applications.
+4. Optionally, create a [GitHub Account](https://github.com)
+
+<hr>
+
+# 📂 Setup and Use
+
+### Download Project from Github
+
+1. Open your terminal and navigate to a directory that you wish to download this project to.
+2. Type the following line of code into your terminal, and press 'Enter'. Project will automatically begin downloading to your current directory.
 
     <code>git clone https://github.com/schradermade/BizLookup.Solution.git</code>
+3. Once the project has finished downloading, use the terminal to navigate to the “__BizLookup.Solution__" folder of the project.
+4. Now, navigate to __BizLookupMvc__ directory and run these commands:
+    - `dotnet restore`
+    - `dotnet run`
 
-3) Once the project has finished downloading, use the terminal/console to navigate to the “__BizLookup.Solution__" folder of the project.
-  
-**Install Postman**
-This is optional https://www.postman.com/downloads/ 
 
+### Database Setup
 
-**Setup Database Connection**
+1. In the __BusinessLookup.Solution/__ directory, create a new file and name it "appsettings.json".  Copy and paste the following code into your new appsettings.json file.
 
-Create a new file in the root directory of the __BusinessLookup.Solution/ directory named "appsettings.json".  Copy and past the following code inside of the file.
-
+2. Code to paste into __appsettings.json__
 ```
 {
   "Logging": {
@@ -135,45 +123,36 @@ Create a new file in the root directory of the __BusinessLookup.Solution/ direct
     "DefaultConnection": "Server=localhost;Port=3306;database=bizlookup;uid=root;pwd=epicodus;"
   }
 }
-
 ```
-Replace "YourId" and "YourPassword" in the code above with the user id and user password you use for logging into MySQL Workbench.  Save the "appsettings.json" file.
+3. Also in `appsettings.json`: In the above block of code, within the `"DefaultConnection"`, you will need to change the `uid` and `pwd` to the corresponding UserName and Password you set for your MySQL WorkBench.
 
-Navigate to `BizLookupMvc` directory and type the following code and hit enter/return to install the necessary dependencies. 
+4. Save the `appsettings.json` file.
+5. In the terminal, navigate to the `BizLookupApi` folder inside of the `BizLookup.Solution` directory, and run these commands:
+    - `dotnet ef database update`
+    - Optional step: To update the database with any changes to the code, run the command `dotnet ef migrations add <MigrationsName>` which will use Entity Framework Core's code-first principle to generate a database update. After, run the previous command `dotnet ef database update` to update the database.
 
-<code>dotnet restore</code>
+---
 
-Once the dependencies have installed, type the following command to build the database the projects uses.
+# 🔎 API Information
 
-<code>dotnet ef database update</code>
+## Swagger
 
-After installing dependencies and building the database, run the project with the command 
-
-<code>dotnet run</code>
-
-**Swagger**
- 
-Here is the information on Swagger which was implemented in this project: https://docs.microsoft.com/en-us/aspnet/core/tutorials/web-api-help-pages-using-swagger?view=aspnetcore-5.0 
-I personally used Swashbuckle, the documentation for intalling swashbuckle is here: https://docs.microsoft.com/en-us/aspnet/core/tutorials/getting-started-with-swashbuckle?view=aspnetcore-5.0&tabs=visual-studio 
-
-## API Information
-**Swagger**
-To view the business lookup API with swashbuckle do the following commands:
+To view the 'BizLookup' API with Swashbuckle, run these commands in terminal:
 
 <code>dotnet run</code>
 
 and navigate to:
 
 <code>http://localhost:5003/swagger/index.html</code>
-----------------------------------------------------------------------
-### Endpoints
 
-Base URL: 
+## Endpoints
+
+#### Base URL: 
 ```
 https://localhost:5003
 ```
 
-**HTTP Request Structure:** 
+#### HTTP Request Structure:
 
 ```
 GET /api/{component}
@@ -182,14 +161,13 @@ GET /api/{component}/{id}
 PUT /api/{component}/{id}
 DELETE /api/{component}/{id}
 ```
----------------------------------------------------------------------
 
-### Businesses
+## Businesses
 
-Access the name, industry, address, hours, url and phone for the businesses.
+<b>Access the name, industry, address, hours, url and phone for the businesses.</b>
  
 
-HTTP Request Structure: 
+#### HTTP Request Structure: 
 
 ```
 GET /api/businesses
@@ -199,14 +177,12 @@ PUT /api/businesses/{id}
 DELETE /api/businesses/{id}
 ```
 
--------------------------------------------------------------------------
-
-**Example of a Search Query**
+#### Example of a Search Query
 ```
 http://localhost:5003/api/Businesses/2
 ```
 
-**JSON Response:** 
+#### JSON Response:
 ```
   {
     "businessId": 2,
@@ -220,28 +196,35 @@ http://localhost:5003/api/Businesses/2
 
 ```
 
-## Technology Used
+# ☎️ Contact and Support
 
-* C# 7.3
-* .NET Core 2.2
-* Entity
-* Git
-* MySQL
-* dotnet script, REPL
-* Swagger
-* Visual Studio Code
-* Identity
-  
-## Known Bugs
-There are no known bugs
+If you have any feedback or concerns, please contact <natecschrader@gmail.com>.
 
 
-## Support and contact details
-You can reach out via email:
+# 🛡 License
 
-Nathan Schrader <natecschrader@gmail.com>
+This repository is licensed under the MIT license.
 
+Copyright (c) 2020 by _Nathan Schrader_
 
-## Legal
+```
 
-I used the MIT license, see below: Copyright (c) 2020 Nathan Schrader Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+```
