@@ -14,7 +14,8 @@ namespace BizLookupApi.Models
         public string Industry { get; set; }
     
         [StringLength (50)]
-        // [Range(0, 200, ErrorMessage = "Industry must be between 0 and 200.")]
+        //[Range(0, 200, ErrorMessage = "Industry must be between 0 and 200.")]
+        [Required]
         public string Address { get; set; }
         
         public string Hours { get; set; }

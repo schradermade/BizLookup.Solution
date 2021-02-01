@@ -8,8 +8,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BizLookupApi.Migrations
 {
     [DbContext(typeof(BizLookupApiContext))]
-    [Migration("20210123214730_AddURL")]
-    partial class AddURL
+    [Migration("20210131235345_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -27,8 +27,7 @@ namespace BizLookupApi.Migrations
                         .IsRequired()
                         .HasMaxLength(50);
 
-                    b.Property<string>("Hours")
-                        .IsRequired();
+                    b.Property<string>("Hours");
 
                     b.Property<string>("Industry")
                         .IsRequired()
@@ -37,6 +36,8 @@ namespace BizLookupApi.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(50);
+
+                    b.Property<string>("Phone");
 
                     b.Property<string>("URL");
 

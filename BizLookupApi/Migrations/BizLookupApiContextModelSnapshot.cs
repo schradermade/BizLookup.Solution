@@ -22,6 +22,7 @@ namespace BizLookupApi.Migrations
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Address")
+                        .IsRequired()
                         .HasMaxLength(50);
 
                     b.Property<string>("Hours");
